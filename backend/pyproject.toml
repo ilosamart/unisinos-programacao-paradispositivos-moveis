@@ -1,0 +1,19 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Fábio Tramasoli", email = "fabio@tramasoli.com"},
+]
+dependencies = [
+    "fastapi>=0.110.0,<0.111.0",
+    "sqlalchemy>=2.0.29,<2.1",
+    "dynaconf>=3.2.5,<3.3",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+package-type = "application"
