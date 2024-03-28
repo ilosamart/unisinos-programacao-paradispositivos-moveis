@@ -1,30 +1,32 @@
 import datetime
 
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Numeric
 from sqlalchemy.orm import relationship
 
-from database import Base
+from backend.database import Base
 
 
-class Cliente(Base):
-    __tablename__ = "clientes"
-
-    id = Column(Integer, primary_key=True)
-    nome = Column(String)
-    limite = Column(Integer)
-    saldo = Column(Integer)
-
-    transacoes = relationship("Transacao", back_populates="cliente")
-
-
-class Transacao(Base):
-    __tablename__ = "transacoes"
+class ServiceCatalog(Base):
+    __tablename__ = "service_catalog"
 
     id = Column(Integer, primary_key=True)
-    valor = Column(Integer)
-    tipo = Column(String(1))
-    descricao = Column(String(10))
-    realizada_em = Column(DateTime, default=datetime.datetime.utcnow)
-    cliente_id = Column(Integer, ForeignKey("clientes.id"))
+    photo = Column(String(10))
+    name = Column(String(10))
+    description = Column(String(10))
+    when = Column(DateTime, default=datetime.datetime.utcnow)
+    value = Column(Numeric(6, 2))
 
-    cliente = relationship("Cliente", back_populates="transacoes")
+    potential_customers = relationship("PotentialCustomer", back_populates="service")
+
+
+
+class PotentialCustomer(Base):
+    __tablename__ = "potential_customers"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(10))
+    email = Column(String(10))
+    message = Column(String(400))
+    service_id = Column(Integer, ForeignKey("service_catalog.id"))
+
+    service = relationship("ServiceCatalog", back_populates="potential_customers")

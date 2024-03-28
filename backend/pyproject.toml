@@ -7,8 +7,11 @@ authors = [
 ]
 dependencies = [
     "fastapi>=0.110.0,<0.111.0",
-    "sqlalchemy>=2.0.29,<2.1",
+    "sqlalchemy>=2.0.29",
     "dynaconf>=3.2.5,<3.3",
+    "email-validator>=2.1.1",
+    "uvicorn>=0.29.0",
+    "aiosqlite>=0.20.0",
 ]
 requires-python = "==3.10.*"
 readme = "README.md"

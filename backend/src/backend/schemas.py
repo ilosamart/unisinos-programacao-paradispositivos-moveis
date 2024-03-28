@@ -1,53 +1,27 @@
 from datetime import datetime
-from enum import Enum
+from decimal import Decimal
 
-from pydantic import BaseModel, ConfigDict, Field
-
-
-class TipoTransacao(Enum):
-    CREDITO = "c"
-    DEBITO = "d"
+from pydantic import BaseModel, ConfigDict, Field, EmailStr
 
 
-class Transacao(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
-    valor: int
-    tipo: str
-    descricao: str
-    realizada_em: datetime
-
-
-class Cliente(BaseModel):
+class ServiceCatalog(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    nome: str
-    limite: int
-    saldo: int
+    photo: str
+    name: str
+    description: str
+    when: datetime
+    value: Decimal
 
 
-class ClienteComTransacoes(Cliente):
-    transacoes: list[Transacao] = []
 
+class PotentialCustomer(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
 
-class TransacaoIn(BaseModel):
-    valor: int
-    tipo: TipoTransacao
-    descricao: str = Field(max_length=10, min_length=1)
-
-
-class SaldoTransacaoOut(BaseModel):
-    limite: int
-    saldo: int
-
-
-class SaldoOut(BaseModel):
-    total: int
-    limite: int
-    data_extrato: datetime
-
-
-class Extrato(BaseModel):
-    saldo: SaldoOut
-    ultimas_transacoes: list[Transacao] = []
+    id: int
+    name: str
+    email: EmailStr
+    message: str
+    when: datetime
+    service_id: int
