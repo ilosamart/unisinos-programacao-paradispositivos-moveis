@@ -1,25 +1,63 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    
     <ion-title>
       Cadastro para receber um orçamento - Clique no modelo:
     </ion-title>
+     
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
  
   <ion-card-content>
-    
-    <ion-input label="Nome: " placeholder="nome"></ion-input>
-    <ion-input label="Email: " type="email" placeholder="email@domain.com"></ion-input>
-    <ion-button class="button1" href="/tabs/tab3">Enviar</ion-button>
     <ion-button class="button1" href="/tabs/tab1">Incio</ion-button>
     <ion-list>
-      <ion-avatar slot="start"><ion-img src="assets/foto1.jpg"></ion-img></ion-avatar>
-      <ion-avatar slot="start"><ion-img src="assets/foto2.jpg"></ion-img></ion-avatar>
-      <ion-avatar slot="start"><ion-img src="assets/foto3.jpg"></ion-img></ion-avatar>
-      <ion-avatar slot="start"><ion-img src="assets/foto4.jpg"></ion-img></ion-avatar>
+      <ion-item>
+        <ion-label position="floating">Nome:</ion-label>  
+         <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+         <ion-input type="email"></ion-input>
+      </ion-item>
     </ion-list>
   </ion-card-content>
 
+<ion-card-content>
+  <ion-item>
+      <ion-list>
+        <ion-checkbox slot="end">Modelo 1 - Preço: R$10,00</ion-checkbox>
+        <ion-avatar slot="start"><ion-img src="assets/foto1.jpg"></ion-img>
+      </ion-avatar>
+      </ion-list> 
+  </ion-item>
+
+  <ion-item>
+      <ion-list>
+        <ion-checkbox slot="end">Modelo 2 - Preço: R$12,00</ion-checkbox>
+        <ion-avatar slot="start"><ion-img src="assets/foto2.jpg">
+          <ion-label></ion-label>
+        </ion-img></ion-avatar>
+      </ion-list>
+  </ion-item>
+  
+  <ion-item>
+      <ion-list>
+        <ion-checkbox slot="end">Modelo 3 - Preço: R$14,00</ion-checkbox>
+        <ion-avatar slot="start"><ion-img src="assets/foto3.jpg">
+          <ion-label></ion-label>
+        </ion-img></ion-avatar>
+      </ion-list>
+  </ion-item>
+
+  <ion-item>
+      <ion-list>
+        <ion-checkbox slot="end">Modelo 4 - Preço: R$16,00</ion-checkbox>
+          <ion-avatar slot="start"><ion-img src="assets/foto4.jpg">
+            <ion-label></ion-label>
+          </ion-img></ion-avatar>
+      </ion-list>    
+  </ion-item>
+</ion-card-content>
 </ion-content>
