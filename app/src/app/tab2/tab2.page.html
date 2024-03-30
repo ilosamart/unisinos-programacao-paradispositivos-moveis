@@ -10,11 +10,17 @@
 
 <ion-content [fullscreen]="true">
  
+
   <ion-card-content>
-    <ion-button class="button1" href="/tabs/tab1">Incio</ion-button>
+    
+      <ion-button class="button1" href="/tabs/tab1">Incio</ion-button>
+      <ion-button>Cadastrar</ion-button>
+
+   
+
     <ion-list>
       <ion-item>
-        <ion-label position="floating">Nome:</ion-label>  
+        <ion-label name="name" position="floating">Nome:</ion-label>  
          <ion-input type="text"></ion-input>
       </ion-item>
       <ion-item>
@@ -60,4 +66,5 @@
       </ion-list>    
   </ion-item>
 </ion-card-content>
+
 </ion-content>
