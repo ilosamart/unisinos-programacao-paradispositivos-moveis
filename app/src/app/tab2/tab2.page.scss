@@ -2,7 +2,7 @@ ion-title{
     color:#4FB253
 }
 
-ion-input{
+ion-label{
     color:#4FB253
 }
 
@@ -11,6 +11,11 @@ ion-button{
     --color: rgb(14, 14, 14);  
     --border-radius: 12px;
    
+}
+ion-list{
+    --background: #4FB253;  
+    --color: rgb(14, 14, 14);  
+    --border-radius: 12px;
 }
 
   
