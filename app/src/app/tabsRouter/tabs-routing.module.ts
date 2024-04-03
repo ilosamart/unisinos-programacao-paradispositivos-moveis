@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { TabsPage } from './tabsRouter.page';
 
 const routes: Routes = [
   {
@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'tabInicio',
+        loadChildren: () => import('../tabInicio/tabInicio.module').then(m => m.tabInicioPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'tabCadastro',
+        loadChildren: () => import('../tabCadastro/tabCadastro.module').then(m => m.tabCadastroPageModule)
       },
       {
         path: 'tab3',
@@ -21,14 +21,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabsRouter/tabInicio',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabsRouter/tabInicio',
     pathMatch: 'full'
   }
 ];
