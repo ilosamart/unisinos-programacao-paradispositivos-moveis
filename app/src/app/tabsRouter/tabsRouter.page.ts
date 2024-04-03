@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+  templateUrl: 'tabsRouter.page.html',
+  styleUrls: ['tabsRouter.page.scss']
 })
 export class TabsPage {
 
