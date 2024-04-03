@@ -240,9 +240,9 @@ export function wrapHttpLibrary(promiseHttpLibrary: PromiseHttpLibrary): HttpLib
 
 export class HttpInfo<T> extends ResponseContext {
     public constructor(
-        public httpStatusCode: number,
-        public headers: { [key: string]: string },
-        public body: ResponseBody,
+        public override httpStatusCode: number,
+        public override headers: { [key: string]: string },
+        public override body: ResponseBody,
         public data: T,
     ) {
         super(httpStatusCode, headers, body);

@@ -6,6 +6,7 @@ import { tabCadastroPage } from './tabCadastro.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { tabCadastroPageRoutingModule } from './tabCadastro-routing.module';
+import { DadosService } from '../service';
 
 @NgModule({
   imports: [
