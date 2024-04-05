@@ -1,18 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Dados e compra:
+      Solicitações de Oçamento
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
-      
-      <ion-input label="Nome: " placeholder="nome"></ion-input>
-      <ion-input label="Email: " type="email" placeholder="email@domain.com"></ion-input>
-      <ion-button >Confimar orçamento</ion-button>
-    </ion-card-content>
-   </ion-card>
+
+  EM CONSTRUÇÃO
+
+  <!-- <ion-card-content>
+    <ion-item *ngFor="let solicitacao of solicitacoes; trackBy: getServices">
+      <ion-list>
+        <ion-text>
+          {{solicitacao.name}} (em {{solicitacao.when}})
+        </ion-text>
+        <ion-text>
+          Produto: {{solicitacao.produto}}
+        </ion-text>
+        <ion-text>
+          Pedido: {{solicitacao.description}}
+        </ion-text>
+      </ion-list>
+    </ion-item>
+  </ion-card-content> -->
 </ion-content>

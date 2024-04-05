@@ -22,7 +22,10 @@ export class tabCadastroPage {
   constructor(private dadosService: DadosService) { }
 
   ngOnInit() {
+    this.refreshData();
+  }
 
+  refreshData() {
     this.dadosService.getServiceCatalogServiceCatalogGet(
       1,
       10,
