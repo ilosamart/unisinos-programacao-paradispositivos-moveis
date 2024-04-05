@@ -5,6 +5,7 @@ export * from '../models/ServiceCatalogOutput';
 export * from '../models/ValidationError';
 export * from '../models/ValidationErrorLocInner';
 export * from '../models/Value';
+export * from '../models/When';
 
 import { HTTPValidationError } from '../models/HTTPValidationError';
 import { PotentialCustomer } from '../models/PotentialCustomer';
@@ -13,6 +14,7 @@ import { ServiceCatalogOutput } from '../models/ServiceCatalogOutput';
 import { ValidationError } from '../models/ValidationError';
 import { ValidationErrorLocInner } from '../models/ValidationErrorLocInner';
 import { Value } from '../models/Value';
+import { When } from '../models/When';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -37,6 +39,7 @@ let typeMap: {[index: string]: any} = {
     "ValidationError": ValidationError,
     "ValidationErrorLocInner": ValidationErrorLocInner,
     "Value": Value,
+    "When": When,
 }
 
 type MimeTypeDescriptor = {

@@ -9,6 +9,7 @@ import { ServiceCatalogOutput } from '../models/ServiceCatalogOutput';
 import { ValidationError } from '../models/ValidationError';
 import { ValidationErrorLocInner } from '../models/ValidationErrorLocInner';
 import { Value } from '../models/Value';
+import { When } from '../models/When';
 
 import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
 export class ObservableDefaultApi {

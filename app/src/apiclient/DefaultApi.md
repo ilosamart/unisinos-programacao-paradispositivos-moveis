@@ -4,9 +4,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getServiceCatalogServiceCatalogGet**](DefaultApi.md#getServiceCatalogServiceCatalogGet) | **GET** /service-catalog/ | Get Service Catalog
-[**postContactCustomerContactPost**](DefaultApi.md#postContactCustomerContactPost) | **POST** /customer-contact/ | Post Contact
-[**postServiceCatalogServiceCatalogPost**](DefaultApi.md#postServiceCatalogServiceCatalogPost) | **POST** /service-catalog/ | Post Service Catalog
+[**getServiceCatalogServiceCatalogGet**](DefaultApi.md#getServiceCatalogServiceCatalogGet) | **GET** /service-catalog | Get Service Catalog
+[**postContactCustomerContactPost**](DefaultApi.md#postContactCustomerContactPost) | **POST** /customer-contact | Post Contact
+[**postServiceCatalogServiceCatalogPost**](DefaultApi.md#postServiceCatalogServiceCatalogPost) | **POST** /service-catalog | Post Service Catalog
 [**readRootGet**](DefaultApi.md#readRootGet) | **GET** / | Read Root
 
 

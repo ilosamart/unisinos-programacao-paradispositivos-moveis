@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
 import uvicorn
 
@@ -10,6 +11,14 @@ from backend.database import AsyncSession, init_db
 
 app = FastAPI(
     title="Store Backend",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins="*",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -24,7 +33,7 @@ def read_root():
 
 
 @app.post(
-    "/service-catalog/",
+    "/service-catalog",
     status_code=204,
 )
 async def post_service_catalog(
@@ -42,7 +51,7 @@ async def post_service_catalog(
     return
 
 
-@app.get("/service-catalog/", response_model=List[backend.schemas.ServiceCatalog])
+@app.get("/service-catalog", response_model=List[backend.schemas.ServiceCatalog])
 async def get_service_catalog(db: AsyncSession, page: int = 1, rows_per_page: int = 10):
     offset = rows_per_page * (page - 1)
     retval = []
@@ -56,7 +65,7 @@ async def get_service_catalog(db: AsyncSession, page: int = 1, rows_per_page: in
 
 
 @app.post(
-    "/customer-contact/",
+    "/customer-contact",
     status_code=204,
 )
 async def post_contact(

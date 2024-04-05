@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabsRouter.page';
+import { DadosService } from '../service';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'tabCadastro',
-        loadChildren: () => import('../tabCadastro/tabCadastro.module').then(m => m.tabCadastroPageModule)
+        loadChildren: () => import('../tabCadastro/tabCadastro.module').then(m =>  m.tabCadastroPageModule)
       },
       {
         path: 'tab3',

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 DefaultApi.md
 README.md
 apis/DefaultApi.ts
@@ -20,6 +19,7 @@ models/ServiceCatalogOutput.ts
 models/ValidationError.ts
 models/ValidationErrorLocInner.ts
 models/Value.ts
+models/When.ts
 models/all.ts
 package.json
 rxjsStub.ts

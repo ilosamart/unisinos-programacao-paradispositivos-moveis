@@ -1,7 +1,8 @@
 from datetime import datetime
 from decimal import Decimal
+from typing import Optional
 
-from pydantic import BaseModel, ConfigDict, Field, EmailStr
+from pydantic import BaseModel, ConfigDict, Field, EmailStr, model_validator, root_validator
 
 
 class ServiceCatalog(BaseModel):
@@ -23,5 +24,10 @@ class PotentialCustomer(BaseModel):
     name: str
     email: EmailStr
     message: str
-    when: datetime
+    when: Optional[datetime] = None
     service_id: int
+
+    @model_validator(mode='after')
+    def validator(self):
+        self.when = datetime.now()
+        return self
