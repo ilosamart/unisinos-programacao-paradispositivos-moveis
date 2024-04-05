@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { When } from '../models/When';
 import { HttpFile } from '../http/http';
 
 export class PotentialCustomer {
@@ -17,7 +18,7 @@ export class PotentialCustomer {
     'name': string;
     'email': string;
     'message': string;
-    'when': Date;
+    'when'?: When;
     'serviceId': number;
 
     static readonly discriminator: string | undefined = undefined;
@@ -50,8 +51,8 @@ export class PotentialCustomer {
         {
             "name": "when",
             "baseName": "when",
-            "type": "Date",
-            "format": "date-time"
+            "type": "When",
+            "format": ""
         },
         {
             "name": "serviceId",

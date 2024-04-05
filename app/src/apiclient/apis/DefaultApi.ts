@@ -29,7 +29,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/service-catalog/';
+        const localVarPath = '/service-catalog';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -69,7 +69,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/customer-contact/';
+        const localVarPath = '/customer-contact';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -110,7 +110,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/service-catalog/';
+        const localVarPath = '/service-catalog';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);

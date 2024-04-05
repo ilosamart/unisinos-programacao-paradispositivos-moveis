@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://unisinos-ppdm-backend.tramasoli.com'
+  apiURL: 'https://unisinos-ppdm-backend.tramasoli.com',
+  // apiURL: 'http://localhost:9999',
 };
 
 /*

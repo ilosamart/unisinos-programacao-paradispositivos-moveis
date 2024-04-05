@@ -10,34 +10,55 @@
 
 <ion-content [fullscreen]="true">
 
-
   <ion-card-content>
-
-    <ion-button class="button1" href="/tabs/tabInicio">Incio</ion-button>
-    <ion-button>Cadastrar</ion-button>
-
-
-
-    <ion-list>
-      <ion-item>
-        <ion-label name="name" position="floating">Nome:</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email:</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-
-  <ion-card-content>
-    <ion-item *ngFor="let service of services">
+    <ion-item *ngFor="let service of services; trackBy: getServices">
       <ion-list>
-        <ion-checkbox slot="end">{{service.name}} (R$ {{service.value}})</ion-checkbox>
-        <ion-avatar slot="start"><ion-img src="assets/foto1.jpg"></ion-img>
+        <ion-text>
+          {{service.name}} (a partir de R$ {{service.value}})
+        </ion-text>
+        <ion-button (click)="requestBudget(service)">Solicitar orçamento</ion-button>
+        <ion-avatar>
+          <ion-img src="assets/foto1.jpg"></ion-img>
         </ion-avatar>
       </ion-list>
     </ion-item>
   </ion-card-content>
+
+  <ion-modal [isOpen]="isModalOpen" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancelar</ion-button>
+          </ion-buttons>
+          <ion-title>Orçamento<br />{{servicoSelecionado.name}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-input
+            label="Qual o seu nome para contato?"
+            labelPlacement="stacked"
+            type="text"
+            placeholder="Fulano da Silva Sauro"
+            [(ngModel)]="nomeContato"
+          ></ion-input>
+          
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="E seu e-mail?"
+            labelPlacement="stacked"
+            type="email"
+            placeholder="fulano@exemplo.naoexistonemexistirei"
+            [(ngModel)]="emailContato"
+          ></ion-input>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
 </ion-content>

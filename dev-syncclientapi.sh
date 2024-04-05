@@ -6,6 +6,7 @@ OPENAPI_GENERATOR_JAR=${1:-~/Apps/openapi-generator-cli/openapi-generator-cli.ja
 
 java -jar ${OPENAPI_GENERATOR_JAR} generate \
         -g typescript \
+        --additional-properties useOverride=true \
         -i https://unisinos-ppdm-backend.tramasoli.com/openapi.json \
         -o ${DIR}/app/src/apiclient \
         --skip-validate-spec \
