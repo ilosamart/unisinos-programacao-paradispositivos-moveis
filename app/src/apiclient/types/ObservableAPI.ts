@@ -28,6 +28,39 @@ export class ObservableDefaultApi {
     }
 
     /**
+     * Get Customer Contact
+     * @param page 
+     * @param rowsPerPage 
+     */
+    public getCustomerContactCustomerContactGetWithHttpInfo(page?: number, rowsPerPage?: number, _options?: Configuration): Observable<HttpInfo<Array<PotentialCustomer>>> {
+        const requestContextPromise = this.requestFactory.getCustomerContactCustomerContactGet(page, rowsPerPage, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.getCustomerContactCustomerContactGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Customer Contact
+     * @param page 
+     * @param rowsPerPage 
+     */
+    public getCustomerContactCustomerContactGet(page?: number, rowsPerPage?: number, _options?: Configuration): Observable<Array<PotentialCustomer>> {
+        return this.getCustomerContactCustomerContactGetWithHttpInfo(page, rowsPerPage, _options).pipe(map((apiResponse: HttpInfo<Array<PotentialCustomer>>) => apiResponse.data));
+    }
+
+    /**
      * Get Service Catalog
      * @param page 
      * @param rowsPerPage 

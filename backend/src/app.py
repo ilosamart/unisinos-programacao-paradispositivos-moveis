@@ -87,6 +87,18 @@ async def post_contact(
         session.add(new_potential_customer)
     return
 
+@app.get("/customer-contact", response_model=List[backend.schemas.PotentialCustomer])
+async def get_customer_contact(db: AsyncSession, page: int = 1, rows_per_page: int = 10):
+    offset = rows_per_page * (page - 1)
+    retval = []
+    async with db.begin() as session:
+        customer_contacts = await session.stream_scalars(
+            select(backend.models.PotentialCustomer).offset(offset).limit(rows_per_page)
+        )
+        async for customer_contact in customer_contacts:
+            retval.append(backend.schemas.PotentialCustomer.model_validate(customer_contact))
+    return retval
+
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=9999, reload=True, workers=4)

@@ -24,6 +24,26 @@ export class PromiseDefaultApi {
     }
 
     /**
+     * Get Customer Contact
+     * @param page 
+     * @param rowsPerPage 
+     */
+    public getCustomerContactCustomerContactGetWithHttpInfo(page?: number, rowsPerPage?: number, _options?: Configuration): Promise<HttpInfo<Array<PotentialCustomer>>> {
+        const result = this.api.getCustomerContactCustomerContactGetWithHttpInfo(page, rowsPerPage, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Customer Contact
+     * @param page 
+     * @param rowsPerPage 
+     */
+    public getCustomerContactCustomerContactGet(page?: number, rowsPerPage?: number, _options?: Configuration): Promise<Array<PotentialCustomer>> {
+        const result = this.api.getCustomerContactCustomerContactGet(page, rowsPerPage, _options);
+        return result.toPromise();
+    }
+
+    /**
      * Get Service Catalog
      * @param page 
      * @param rowsPerPage 

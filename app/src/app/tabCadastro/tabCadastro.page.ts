@@ -32,6 +32,7 @@ export class tabCadastroPage {
     ).then((data: any) => {
       console.log('API called successfully. Returned data: ' + data);
       this.services = data;
+      localStorage.setItem('services', JSON.stringify(this.services));
     }).catch((error: any) => console.error(error));
   }
 

@@ -18,7 +18,7 @@ export class PotentialCustomer {
     'name': string;
     'email': string;
     'message': string;
-    'when'?: When;
+    'when': Date;
     'serviceId': number;
 
     static readonly discriminator: string | undefined = undefined;
@@ -51,8 +51,8 @@ export class PotentialCustomer {
         {
             "name": "when",
             "baseName": "when",
-            "type": "When",
-            "format": ""
+            "type": "Date",
+            "format": "date-time"
         },
         {
             "name": "serviceId",

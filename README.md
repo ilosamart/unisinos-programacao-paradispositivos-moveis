@@ -39,7 +39,8 @@ pipx install pdm
 - Docker para execução
 
 ### Scripts auxiliares
-
+- `dev-buildapp.sh`
+    - faz build do APK
 - `dev-buildbackend.sh`
     - faz build do conteiner backend e publica no GitHub
 - `dev-runandroidemulator.sh`

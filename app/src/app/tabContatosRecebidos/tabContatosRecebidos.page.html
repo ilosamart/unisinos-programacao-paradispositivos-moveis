@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>
+      Orçamentos recebidos <ion-button (click)="refreshData()">atualizar</ion-button>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card-content>
+    <ion-item *ngFor="let potentialCustomer of potentialCustomers; trackBy: getPotentialCustomers">
+      <ion-list>
+        <ion-text>
+          {{potentialCustomer.name}} fez contato em {{potentialCustomer.when}}
+        </ion-text>
+        <br />
+        <ion-text>
+          Mensagem: <blockquote>{{potentialCustomer.message}}</blockquote>
+        </ion-text>
+      </ion-list>
+    </ion-item>
+  </ion-card-content>
+
+
+
+</ion-content>

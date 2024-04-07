@@ -13,6 +13,21 @@ import { When } from '../models/When';
 import { ObservableDefaultApi } from "./ObservableAPI";
 import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
 
+export interface DefaultApiGetCustomerContactCustomerContactGetRequest {
+    /**
+     * 
+     * @type number
+     * @memberof DefaultApigetCustomerContactCustomerContactGet
+     */
+    page?: number
+    /**
+     * 
+     * @type number
+     * @memberof DefaultApigetCustomerContactCustomerContactGet
+     */
+    rowsPerPage?: number
+}
+
 export interface DefaultApiGetServiceCatalogServiceCatalogGetRequest {
     /**
      * 
@@ -54,6 +69,22 @@ export class ObjectDefaultApi {
 
     public constructor(configuration: Configuration, requestFactory?: DefaultApiRequestFactory, responseProcessor?: DefaultApiResponseProcessor) {
         this.api = new ObservableDefaultApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get Customer Contact
+     * @param param the request object
+     */
+    public getCustomerContactCustomerContactGetWithHttpInfo(param: DefaultApiGetCustomerContactCustomerContactGetRequest = {}, options?: Configuration): Promise<HttpInfo<Array<PotentialCustomer>>> {
+        return this.api.getCustomerContactCustomerContactGetWithHttpInfo(param.page, param.rowsPerPage,  options).toPromise();
+    }
+
+    /**
+     * Get Customer Contact
+     * @param param the request object
+     */
+    public getCustomerContactCustomerContactGet(param: DefaultApiGetCustomerContactCustomerContactGetRequest = {}, options?: Configuration): Promise<Array<PotentialCustomer>> {
+        return this.api.getCustomerContactCustomerContactGet(param.page, param.rowsPerPage,  options).toPromise();
     }
 
     /**

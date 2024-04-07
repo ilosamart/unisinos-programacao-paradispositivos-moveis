@@ -17,9 +17,9 @@ export const routes: Routes = [
           import('../tabCadastro/tabCadastro.page').then((m) => m.tabCadastroPage),
       },
       {
-        path: 'tab3',
+        path: 'tabContatosRecebidos',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../tabContatosRecebidos/tabContatosRecebidos.page').then((m) => m.tabContatosRecebidosPage),
       }, 
   
       {
